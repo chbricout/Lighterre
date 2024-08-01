@@ -1,0 +1,16 @@
+{{define "main"}}
+<div class="centered-content">
+    <div class="list-title">
+    {{.Content}}
+</div>
+    {{ range $index, $page:= .Pages }}
+    {{if ne $index 0}}
+    <hr>
+    {{end}}
+    <div class="list-element">
+        <h1><a href="{{$page.RelPermalink}}">{{$page.Title}}</a></h1>
+        {{$page.Content}}
+    </div>
+    {{end}}
+</div>
+{{end}}

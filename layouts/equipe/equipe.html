@@ -1,0 +1,36 @@
+{{define "style"}}
+{{ $headerStyle := resources.Get "styles/equipe.css" }}
+<link rel="stylesheet" href="{{$headerStyle.RelPermalink}}">
+{{end}}
+
+{{define "main"}}
+<div >
+    <div class="centered-content">
+        {{.Content}}
+    </div>
+    <div class="member-grid">
+        {{range sort .Pages ".Params.Ordre" "asc"}}
+        <div class="member-card">
+            {{$path := (partial "adapt_img.html" (printf "membres/%s" .Params.Image ))}}
+            {{ with resources.Get $path }}
+            <img src="{{ .RelPermalink }}" class="member-image">
+            {{end}}
+            <div class="member-description">
+                <h3>{{.Params.Nom}} 
+                
+                </h3>
+                <h4>{{range .Params.Poste}}
+                    {{.}}
+                    {{end}}
+                </h4>
+                <h4><em>{{.Params.Diplôme}}</em></h4>
+                <p>{{.Content}}</p>
+                <span class="email">{{.Params.Email}} <a href="{{printf "mailto:%s" .Params.Email}}">✉</a></span>    
+            </div>
+        </div>
+        {{end}}
+    </div>
+
+</div>
+
+{{end}}

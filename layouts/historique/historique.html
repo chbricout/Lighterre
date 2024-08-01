@@ -1,0 +1,26 @@
+{{define "main"}}
+<div class="centered-content">
+    {{.Content}}
+    {{$events := where .Pages "Params.event" true}}
+    {{$sorted :=sort $events "Params.eventDate" "asc" }}
+    {{ range $sorted }}
+    <hr>
+    <div >
+        <div>
+            <p><b>{{.Params.eventDate}}
+                    {{ with .Params.eventEnd }}
+                    - {{.}}
+                    {{end}}
+                </b></p>
+            <em>{{.Title}}</em>
+            {{.Name}}
+        </div>
+        <div>
+            {{.Content}}
+        </div>
+    </div>
+
+    {{end}}
+
+</div>
+{{end}}
