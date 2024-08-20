@@ -7,6 +7,10 @@
         {{ .Site.Title }}
         {{ end }}
     </title>
+    
+    {{ $iconLnk := resources.Get "compressed/favicon/favicon.ico" }} 
+    <link rel="icon" type="image/x-icon" href="{{ $iconLnk.RelPermalink }}"> 
+
     {{ $headerStyle := resources.Get "styles/base.css" }}
     <link rel="stylesheet" href="{{$headerStyle.RelPermalink}}">
 
@@ -18,7 +22,16 @@
     {{- $page := . }}
     {{$class:=""}}
     <div class="header">
-        <h1 class="center-text">TribuTerre</h1>
+	<div class="title-div">
+            <h1 class="center-text">
+		TribuTerre
+	    </h1>
+	
+            {{$path := (partial "adapt_img.html" "logo")}}
+            {{ with resources.Get $path }}
+            <img src="{{ .RelPermalink }}" class="tribu-logo">
+            {{end}}
+	</div>		
         {{$endIndex := (sub (len site.Menus.nav) 1)}}
         <div class="centered-content center-text">
             {{range $index, $element := site.Menus.nav}}
