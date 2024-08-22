@@ -3,7 +3,7 @@ title="Champignon portobello aux épices de Montréal"
 +++
 # Champignon Portobello aux épices de Montréal
 
-Une recette de Portobello au four aux épices à steak de Montréal, bonne texture et trés juteuse.
+Une recette de Portobello au four aux épices à steak de Montréal, bonne texture et très juteuse.
 
 ## Ingredients
 
