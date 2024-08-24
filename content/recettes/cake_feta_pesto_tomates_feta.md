@@ -27,7 +27,6 @@ Va voir la variante avec la courgette !
 - Incorporez la feta émiettée et les morceaux de tomates et mélangez
 - Beurrez et fariner un moule à cake
 - Versez la préparation dans le moule
-- enfournez pour 45 minutes de cuisson.
 - Enfournez pour 45 min à 355 °F
 - Laissez refroidir un peu avant de le démouler
 
