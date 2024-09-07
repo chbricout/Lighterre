@@ -110,3 +110,10 @@ footer{
 	justify-content: center;
 	align-items: center;
 }
+
+.floating-size{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(195, 202, 213, 0.75);
+}
